@@ -1,0 +1,21 @@
+
+
+
+
+import { profileEnd } from 'console';
+import dotenv from 'dotenv';
+import path from 'path';
+
+// Load environment variables from .env file
+dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
+
+console.log('PORT:', process.env.PORT);
+console.log('DATABASE_URL:', process.env.DATABASE_URL);
+
+export default {
+  node_env:process.env.NODE_ENV,
+  port: process.env.PORT,
+  database_url: process.env.DATABASE_URL,
+  bcrypt_salt_rounds: process.env.BCRYPT_SALT_ROUNDS,
+  default_password: process.env.DEFAULT_PASS,
+};
