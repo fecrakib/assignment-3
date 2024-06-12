@@ -18,7 +18,11 @@ const FacilitySchema = new Schema<TFacility>({
     location:{
         type:String,
         required:true
-    }
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false,
+      },
 });
 
 export const Facility  = model<TFacility>('Facility',FacilitySchema);

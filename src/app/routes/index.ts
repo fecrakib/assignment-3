@@ -6,7 +6,7 @@ const router  = Router();
 
 const moduleRouters = [
     {
-        path:'/facility',
+        path:'/',
         route:FacilityRoutes,
     },
 ];
