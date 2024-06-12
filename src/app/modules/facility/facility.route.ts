@@ -11,6 +11,6 @@ router.post('/facility',validateRequest(facilityValidationSchema),createFacility
 router.get('/facilities',getAllFacility),
 
 
-router.put('/:id',updateFacility)
+router.put('/facility/:id',updateFacility)
 
 export const FacilityRoutes = router ;

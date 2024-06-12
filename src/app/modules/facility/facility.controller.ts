@@ -32,7 +32,12 @@ export const updateFacility  = catchAsync(async(req,res)=>{
     const result  =await updateFacilityIntoDB(id,req.body);
 
     if(!result){
-        throw new AppError(httpStatus.BAD_REQUEST,'Facility is not found')
+        sendResponse(res, {
+            statusCode: httpStatus.BAD_REQUEST,
+            success: false,
+            message: 'Facility not found',
+            data:''
+          });
     }
 
     sendResponse(res, {
