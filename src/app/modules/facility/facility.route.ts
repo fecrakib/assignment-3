@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createFacility, getAllFacility, updateFacility } from "./facility.controller";
+import { createFacility, deleteFacility, getAllFacility, updateFacility } from "./facility.controller";
 
 import { facilityValidationSchema, updateFacilityValidationSchema } from "./facility.validation";
 import validateRequest from "../../middlewares/validateRequest";
@@ -16,4 +16,5 @@ router.get('/facilities',getAllFacility),
 
 router.put('/facility/:id',authenticate,checkAdmin,validateRequest(updateFacilityValidationSchema), updateFacility)
 
+router.delete('/facility/:id',authenticate,checkAdmin,deleteFacility)
 export const FacilityRoutes = router ;
