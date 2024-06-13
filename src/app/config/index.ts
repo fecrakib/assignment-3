@@ -1,11 +1,17 @@
-import dotenv from 'dotenv';
-import path from 'path';
+// import dotenv from 'dotenv';
+// import path from 'path';
+import * as dotenv from 'dotenv';
+import * as path from 'path';
 
 // Load environment variables from .env file
 dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
 
 console.log('PORT:', process.env.PORT);
 console.log('DATABASE_URL:', process.env.DATABASE_URL);
+
+if (!process.env.JWT_SECRET) {
+  throw new Error('JWT_SECRET must be defined');
+}
 
 export default {
   node_env: process.env.NODE_ENV,

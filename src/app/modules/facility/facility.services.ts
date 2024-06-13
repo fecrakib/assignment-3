@@ -10,11 +10,7 @@ export const getAllFacilityFromDB = async ()=>{
     return await Facility.find();
 } 
 
-// export const updateFacilityIntoDB  = async(id:string,payload:Partial<TFacility>)=>{
-//     const result  = await Facility.findByIdAndUpdate(id,payload,{new:true});
 
-//     return result;
-// };
 
 export const updateFacilityIntoDB = async (id: string, payload: Partial<TFacility>): Promise<TFacility | null> => {
     const result = await Facility.findByIdAndUpdate(id, payload, { new: true });

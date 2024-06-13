@@ -3,11 +3,14 @@ import { createFacility, getAllFacility, updateFacility } from "./facility.contr
 
 import { facilityValidationSchema, updateFacilityValidationSchema } from "./facility.validation";
 import validateRequest from "../../middlewares/validateRequest";
+import authenticate from "../../middlewares/authenticate";
+import checkAdmin from "../../middlewares/checkAdmin";
+
 
 const router = Router();
 
-router.post('/facility',validateRequest(facilityValidationSchema),createFacility)
 
+router.post('/facility', authenticate, checkAdmin, validateRequest(facilityValidationSchema), createFacility);
 router.get('/facilities',getAllFacility),
 
 
