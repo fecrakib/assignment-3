@@ -14,6 +14,6 @@ router.post('/facility', authenticate, checkAdmin, validateRequest(facilityValid
 router.get('/facilities',getAllFacility),
 
 
-router.put('/facility/:id',updateFacility)
+router.put('/facility/:id',authenticate,checkAdmin,validateRequest(updateFacilityValidationSchema), updateFacility)
 
 export const FacilityRoutes = router ;
